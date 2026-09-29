@@ -145,9 +145,12 @@
 
       <h3>e) Your API key</h3>
       <p>
-        Your DeepSeek API key is stored in plain text in a configuration file inside the folder where the
-        helper program runs, on your own computer. It is transmitted only to DeepSeek, as a request
-        header. We never receive it, store it, or have any way to read it.
+        Your DeepSeek API key is stored in your browser's local storage, on your own computer, inside the
+        MicPilot extension — not on any server of ours, and not in any file that the helper program
+        writes. When your phone and your browser exchange settings, the key travels over the same
+        end-to-end encrypted channel as your commands, so nothing in between can read it. It is
+        transmitted only to DeepSeek, as a request header. We never receive it, store it, or have any way
+        to read it.
       </p>
 
       <h3>f) Pairing</h3>
@@ -225,8 +228,8 @@
         Everything the Software stores lives on your own devices:
       </p>
       <ul>
-        <li>the helper's configuration file (including your AI key, if provided) in the helper's folder;</li>
-        <li>your settings and pairing token in your browser's local storage.</li>
+        <li>your settings, your AI key (if you provided one), and your pairing token in your browser's local storage;</li>
+        <li>the helper's configuration file, which holds only the pairing code, the paired-device list, and a short command history — never your AI key.</li>
       </ul>
       <p>
         You can delete all of it at any time by removing those files and clearing the site's data in your
