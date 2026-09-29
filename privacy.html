@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Privacy Policy — MicPilot</title>
-    <meta name="description" content="MicPilot privacy policy: no servers, no analytics, no data collection. Your voice commands and page content never leave your own devices." />
+    <meta name="description" content="MicPilot privacy policy: no accounts, no analytics, no data collection. Your voice commands and page content are end-to-end encrypted and, by default, never leave your own network." />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -37,9 +37,20 @@
       <ul>
         <li>We do not collect, store, or have access to any of your personal data.</li>
         <li>The Software has no accounts, no sign-up, and no analytics.</li>
-        <li>Your voice commands and any data they produce stay on your own devices and your own local network.</li>
+        <li>
+          <strong>Your commands are end-to-end encrypted between your phone and your browser.</strong>
+          Whether you connect through the helper on your own computer or through a relay, the messages
+          are encrypted in a way the relay cannot read. The relay forwards ciphertext — it cannot see
+          what you said, and it cannot see the pages you asked it to read.
+        </li>
+        <li>
+          If you use the helper on your own computer, nothing leaves your local network at all.
+        </li>
+        <li>
+          Your AI provider's API key is stored in your own browser and is never sent to us — not even
+          encrypted.
+        </li>
         <li>The only external service the Software can contact is the API of your chosen AI provider (DeepSeek), and only when you have enabled that feature with your own API key.</li>
-        <li>We do not operate any server that receives your data.</li>
       </ul>
 
       <h2>2. Who we are</h2>
@@ -48,7 +59,11 @@
         trading as MicPilot, contactable at <a href="mailto:szmcken168@gmail.com">szmcken168@gmail.com</a>.
         For the purposes of the
         EU/UK General Data Protection Regulation ("GDPR"), we are not a data controller or processor for
-        the content you process with the Software, because that content never reaches us.
+        the content you process with the Software: in local mode it never reaches us, and in relay mode it
+        reaches us only as ciphertext for which we hold no key. The only personal data a relay of ours
+        could technically handle is connection metadata — IP addresses and connection times — held in
+        memory only and discarded when the connection ends (see section 3c). We never write it to disk and
+        never build any profile from it.
       </p>
 
       <h2>3. What the Software does with information</h2>
@@ -63,14 +78,56 @@
 
       <h3>b) Commands and page content</h3>
       <p>
-        Your recognised text is sent from your phone, over your own local network, to the helper program
-        running on your own computer. If you ask the Software to read or summarise a page, the text of
-        that page is read locally by the browser extension and passed to the helper program. This traffic
-        stays on your local network. It is not routed through, and is not visible to, any infrastructure
-        operated by us.
+        Your recognised text is sent from your phone to the browser extension, which performs the action.
+        If you ask the Software to read or summarise a page, the text of that page is read locally by the
+        browser extension. All of this is encrypted end-to-end between your phone and your browser (see
+        section 3c), so nothing in between can read it.
+      </p>
+      <p>
+        How the two devices reach each other depends on which mode you chose:
+      </p>
+      <ul>
+        <li>
+          <strong>Local helper (default when you run it):</strong> your phone talks directly to the helper
+          program on your own computer, over your own local network. Nothing leaves your network.
+        </li>
+        <li>
+          <strong>Relay mode (optional):</strong> both your phone and your browser connect out to a relay,
+          which forwards the encrypted messages between them. See section 3c for exactly what a relay can
+          and cannot see, and how to host one yourself.
+        </li>
+      </ul>
+
+      <h3>c) The relay server</h3>
+      <p>
+        If you choose the relay mode — rather than running the helper on your own computer — your phone and
+        your browser each open an encrypted connection to a relay, which forwards messages between them.
+        This mode exists so that people who would rather not keep a program running on their computer can
+        still use the Software. The relay can be one that we host, or one you run yourself: the Software
+        includes everything needed to run your own.
+      </p>
+      <p><strong>What the relay can see:</strong></p>
+      <ul>
+        <li>the room code that pairs your two devices;</li>
+        <li>the technical facts any server sees: IP addresses, connection times, and message sizes;</li>
+        <li>the public keys your two devices exchange so they can agree on a shared secret.</li>
+      </ul>
+      <p><strong>What the relay cannot see:</strong></p>
+      <ul>
+        <li>your voice commands or any text you type — these are encrypted before they leave your device;</li>
+        <li>the content of any page you ask it to read or summarise;</li>
+        <li>your AI provider's API key, which never leaves your browser.</li>
+      </ul>
+      <p>
+        Rooms are held in memory only. We do not write messages to disk, we do not keep a transcript, and
+        restarting the relay erases everything. Access logs on the relay are discarded.
+      </p>
+      <p>
+        If you prefer that nothing pass through anyone else's infrastructure at all, use the local helper
+        instead — the Software behaves identically, and the two modes are interchangeable.
       </p>
 
-      <h3>c) AI features (optional)</h3>
+      <h3>d) AI features (optional)</h3>
       <p>
         If — and only if — you enter your own DeepSeek API key, certain text is sent directly from your
         computer to DeepSeek's API at <code>https://api.deepseek.com</code> for processing:
@@ -86,14 +143,14 @@
         command engine is used.
       </p>
 
-      <h3>d) Your API key</h3>
+      <h3>e) Your API key</h3>
       <p>
         Your DeepSeek API key is stored in plain text in a configuration file inside the folder where the
         helper program runs, on your own computer. It is transmitted only to DeepSeek, as a request
         header. We never receive it, store it, or have any way to read it.
       </p>
 
-      <h3>e) Pairing</h3>
+      <h3>f) Pairing</h3>
       <p>
         Pairing between your phone and your computer uses a short code displayed inside your own browser.
         After pairing, your phone stores a random access token in its own browser storage. All of this
@@ -104,7 +161,7 @@
       <p>We do not:</p>
       <ul>
         <li>collect, transmit, or store your browsing history, page contents, keystrokes, or voice recordings;</li>
-        <li>operate any backend service, database, or log store that receives data from the Software;</li>
+        <li>operate any backend service, database, or log store that can read the data you process with the Software. In relay mode a relay forwards messages it cannot decrypt (section 3c), and in local mode no server of ours is involved at all;</li>
         <li>use cookies, tracking pixels, fingerprinting, or any third-party analytics;</li>
         <li>sell, rent, or share any information with advertisers or data brokers;</li>
         <li>create user profiles of any kind.</li>
