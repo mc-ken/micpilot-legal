@@ -6,7 +6,7 @@
     <title>MicPilot — Control your browser by voice from your phone</title>
     <meta
       name="description"
-      content="Turn your phone into a voice remote for Chrome on your computer. Private by design: your commands never leave your own local network. Bring your own DeepSeek API key."
+      content="Turn your phone into a voice remote for Chrome on your computer. Private by design: your commands are end-to-end encrypted and, by default, never leave your own network. Bring your own DeepSeek API key."
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -53,10 +53,11 @@
       <h2>Private by design</h2>
       <div class="grid">
         <div class="card">
-          <h3>No servers of ours</h3>
+          <h3>Encrypted end to end</h3>
           <p class="small muted">
-            We do not operate any backend that receives your data. Your phone talks directly to a small
-            helper program running on your own computer, over your own local network.
+            Your commands are encrypted between your phone and your browser. By default your phone talks
+            straight to a small helper program on your own computer, so nothing leaves your network at
+            all. Even in the optional relay mode, the relay only ever forwards ciphertext.
           </p>
         </div>
         <div class="card">
@@ -69,8 +70,8 @@
         <div class="card">
           <h3>Nothing collected</h3>
           <p class="small muted">
-            No accounts, no analytics, no cookies, no browsing history. Nothing to hand over, because
-            nothing ever reaches us.
+            No accounts, no analytics, no cookies, no browsing history. We never receive your commands or
+            the pages you read in a readable form, so there is nothing to hand over.
           </p>
         </div>
       </div>
