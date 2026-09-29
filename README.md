@@ -1,37 +1,31 @@
 # GitHub Pages 站点
 
-这个目录就是对外发布的静态站点，包含两页：
+**已经发布上线：**
 
-| 文件 | 用途 |
+| | |
 | --- | --- |
-| `index.html` | 英文产品落地页（可放 Gumroad 购买链接） |
-| `privacy.html` | 英文隐私政策（Chrome 商店和 Gumroad 都要填这个网址） |
-| `style.css` | 两页共用的样式 |
-| `.nojekyll` | 告诉 GitHub Pages 不要用 Jekyll 处理，避免下划线开头的文件被忽略 |
+| 仓库 | https://github.com/mc-ken/micpilot-legal （公开） |
+| 落地页 | https://mc-ken.github.io/micpilot-legal/ |
+| **隐私政策** | **https://mc-ken.github.io/micpilot-legal/privacy.html** |
 
-## 重要：不要用主仓库发布
+隐私政策那个地址就是填到 Chrome Web Store 后台「Privacy policy URL」和
+Gumroad 商品「Privacy policy」字段的内容。已开启强制 HTTPS。
 
-GitHub 免费版的 Pages **只支持公开仓库**。如果主仓库是公开的，你的扩展和中继源码就全部公开了。
+## 这个目录是源文件
 
-正确做法是新建一个**只放法务页面的公开仓库**，例如 `micpilot-legal`：
+本目录保存的是源文件，发布仓库里是它们的副本。改完这里的文件后，同步过去即可自动更新线上站点：
 
 ```bash
-# 在项目根目录执行
-cd docs
-git init
-git add .
-git commit -m "Add product page and privacy policy"
-git branch -M main
-git remote add origin https://github.com/<你的用户名>/micpilot-legal.git
-git push -u origin main
+# 第一次先克隆发布仓库
+git clone https://github.com/mc-ken/micpilot-legal.git ~/micpilot-legal
+
+# 以后每次改完 docs/ 里的文件，同步并推送
+cp docs/index.html docs/privacy.html docs/style.css docs/.nojekyll docs/README.md ~/micpilot-legal/
+cd ~/micpilot-legal
+git add -A && git commit -m "Update site" && git push
 ```
 
-然后在该仓库的 Settings → Pages 里，把 Source 设为 **Deploy from a branch**，
-Branch 选 `main`，Folder 选 `/ (root)`，保存。
-
-一两分钟后你会拿到一个形如
-`https://<你的用户名>.github.io/micpilot-legal/` 的地址，
-隐私政策就是 `https://<你的用户名>.github.io/micpilot-legal/privacy.html`。
+推上去后一两分钟线上就会更新（Pages 需要重新构建一次）。
 
 ## 发布前检查清单
 
@@ -45,13 +39,14 @@ Branch 选 `main`，Folder 选 `/ (root)`，保存。
    - Gumroad 商品的「Privacy policy」字段
 6. 删掉 `privacy.html` 顶部那段 `<!-- 发布前替换 -->` 注释。
 
-## 另一种做法：主仓库是私有的
+## 为什么单独开仓库
 
-如果不想开新仓库，也可以让主仓库保持私有，仅把这一页托管到
-Cloudflare Pages 或 Netlify 的免费版（支持私有仓库构建），效果一样，链接换成它们的域名即可。
+GitHub 免费版的 Pages **只支持公开仓库**，而本项目的主目录包含扩展和中继的全部源码。
+如果把主仓库公开，付费版想卖的东西就白送了。所以法务页面单独放一个公开仓库，
+主项目保持私有。
 
 ## 自定义域名（可选）
 
-想用自己的域名（例如 `micpilot.app`），在仓库 Settings → Pages → Custom domain 里填域名，
+想用自己的域名（例如 `micpilot.app`），在 GitHub 仓库的 Settings → Pages → Custom domain 里填域名，
 然后在域名商那边加一条 CNAME 记录指向 `<你的用户名>.github.io`。
 GitHub 会自动签发 HTTPS 证书，勾选 Enforce HTTPS 即可。
