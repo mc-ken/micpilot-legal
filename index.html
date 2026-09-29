@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MicPilot — Control your browser by voice from your phone</title>
+    <meta
+      name="description"
+      content="Turn your phone into a voice remote for Chrome on your computer. Private by design: your commands never leave your own local network. Bring your own DeepSeek API key."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="inner">
+        <span class="brand">MicPilot</span>
+        <nav>
+          <a href="privacy.html">Privacy</a>
+          <a href="mailto:[YOUR CONTACT EMAIL]">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <span class="pill">Works with DeepSeek API — bring your own key</span>
+      <h1>Talk to your phone.<br />Your desktop browser listens.</h1>
+      <p class="lede">
+        MicPilot turns your phone into a voice remote for Chrome on your computer. Say "search this",
+        "scroll down", "read this page" — and it happens on your screen, from across the room.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn primary" href="[GUMROAD PRODUCT LINK]">Get MicPilot</a>
+        <a class="btn ghost" href="privacy.html">Read the privacy policy</a>
+      </div>
+      <p class="small muted">One-time purchase. No account, no sign-up, no telemetry.</p>
+
+      <h2>What it does</h2>
+      <p>Speak into your phone and MicPilot performs the action in your computer's browser:</p>
+      <ul>
+        <li><strong>Search</strong> — "search for the weather in Shanghai", or target a site: "search on YouTube for lofi beats"</li>
+        <li><strong>Open</strong> — "open GitHub", "go to example.com"</li>
+        <li><strong>Read the page aloud</strong> — the article you are looking at is spoken back to your phone</li>
+        <li><strong>Summarise</strong> — "summarise this page" gives you the gist in a few sentences</li>
+        <li><strong>Scroll and navigate</strong> — "scroll down", "back", "refresh", "go to the top"</li>
+        <li><strong>Click anything by name</strong> — "click Sign in", "click Add to cart"</li>
+        <li><strong>Type</strong> — "type hello world, then enter"</li>
+        <li><strong>Tabs</strong> — "next tab", "close this tab", "what tabs do I have open?"</li>
+        <li><strong>Video and audio</strong> — "pause", "skip forward 30 seconds", "mute", "volume up"</li>
+        <li><strong>Ask DeepSeek</strong> — "what is quantum entanglement?", and the answer is read back to you</li>
+      </ul>
+
+      <h2>Private by design</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>No servers of ours</h3>
+          <p class="small muted">
+            We do not operate any backend that receives your data. Your phone talks directly to a small
+            helper program running on your own computer, over your own local network.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Bring your own key</h3>
+          <p class="small muted">
+            Around 60 everyday commands work entirely offline, with no key and no internet. The DeepSeek
+            API key is optional and is stored only on your machine.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Nothing collected</h3>
+          <p class="small muted">
+            No accounts, no analytics, no cookies, no browsing history. Nothing to hand over, because
+            nothing ever reaches us.
+          </p>
+        </div>
+      </div>
+
+      <h2>How it works</h2>
+      <ol>
+        <li>Run the included helper on your computer — one command, Node.js, no dependencies.</li>
+        <li>Load the Chrome extension using the step-by-step guide.</li>
+        <li>Open the controller page on your phone, enter the pairing code shown in your browser, and start talking.</li>
+      </ol>
+
+      <h2>Requirements</h2>
+      <ul>
+        <li>Chrome 116 or newer on Windows, macOS, or Linux</li>
+        <li>Node.js 18 or newer on that same computer</li>
+        <li>An Android or iOS phone on the same Wi-Fi network</li>
+        <li>Optional: your own DeepSeek API key for the AI features</li>
+      </ul>
+
+      <h2>What it is not</h2>
+      <div class="notice">
+        MicPilot controls <strong>your own browser</strong>, on <strong>your own computer</strong>, on
+        <strong>your own local network</strong>. It cannot reach another person's device: the helper only
+        accepts connections from the machine it runs on, and pairing requires a code displayed inside your
+        own browser.
+      </div>
+
+      <h2>Trademark notice</h2>
+      <p class="small muted">
+        MicPilot is an independent product. It is <strong>not affiliated with, endorsed by, or sponsored
+        by DeepSeek</strong>. Users must supply their own DeepSeek API key. This software only interprets
+        voice commands and controls the user's own local browser.
+      </p>
+
+      <footer class="site">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:[YOUR CONTACT EMAIL]">[YOUR CONTACT EMAIL]</a>
+        <p class="small">© <span id="year">2026</span> [YOUR NAME OR COMPANY]. All rights reserved.</p>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

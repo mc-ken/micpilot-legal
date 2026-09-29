@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — MicPilot</title>
+    <meta name="description" content="MicPilot privacy policy: no servers, no analytics, no data collection. Your voice commands and page content never leave your own devices." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!--
+    BEFORE PUBLISHING, replace every highlighted placeholder:
+      [YOUR NAME OR COMPANY]
+      [YOUR CONTACT EMAIL]
+      [2026-XX-XX]  (effective date and last-updated date)
+      [PRODUCT NAME] if you rename the product
+    Then delete this comment block.
+  -->
+  <body>
+    <header class="site">
+      <div class="inner">
+        <span class="brand">MicPilot</span>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="mailto:[YOUR CONTACT EMAIL]">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <h1>Privacy Policy</h1>
+      <p class="lede">
+        Effective date: <span class="placeholder">[2026-XX-XX]</span> &nbsp;·&nbsp;
+        Last updated: <span class="placeholder">[2026-XX-XX]</span>
+      </p>
+
+      <p>
+        This Privacy Policy explains how <span class="placeholder">[YOUR NAME OR COMPANY]</span>
+        ("we", "us") handles information in connection with the <strong>MicPilot</strong> browser
+        extension, the local helper program, and the mobile controller web page (together, the
+        "Software").
+      </p>
+
+      <h2>1. The short version</h2>
+      <ul>
+        <li>We do not collect, store, or have access to any of your personal data.</li>
+        <li>The Software has no accounts, no sign-up, and no analytics.</li>
+        <li>Your voice commands and any data they produce stay on your own devices and your own local network.</li>
+        <li>The only external service the Software can contact is the API of your chosen AI provider (DeepSeek), and only when you have enabled that feature with your own API key.</li>
+        <li>We do not operate any server that receives your data.</li>
+      </ul>
+
+      <h2>2. Who we are</h2>
+      <p>
+        The Software is published by <span class="placeholder">[YOUR NAME OR COMPANY]</span>,
+        contactable at <span class="placeholder">[YOUR CONTACT EMAIL]</span>. For the purposes of the
+        EU/UK General Data Protection Regulation ("GDPR"), we are not a data controller or processor for
+        the content you process with the Software, because that content never reaches us.
+      </p>
+
+      <h2>3. What the Software does with information</h2>
+
+      <h3>a) Voice input</h3>
+      <p>
+        When you speak into the mobile controller page, speech recognition is performed by your browser
+        and your device's speech recognition provider — for example Google's speech services in Chrome, or
+        Apple's on iOS. The audio is handled by that provider under their own privacy policy. We never
+        receive the audio, and we never receive the resulting transcript.
+      </p>
+
+      <h3>b) Commands and page content</h3>
+      <p>
+        Your recognised text is sent from your phone, over your own local network, to the helper program
+        running on your own computer. If you ask the Software to read or summarise a page, the text of
+        that page is read locally by the browser extension and passed to the helper program. This traffic
+        stays on your local network. It is not routed through, and is not visible to, any infrastructure
+        operated by us.
+      </p>
+
+      <h3>c) AI features (optional)</h3>
+      <p>
+        If — and only if — you enter your own DeepSeek API key, certain text is sent directly from your
+        computer to DeepSeek's API at <code>https://api.deepseek.com</code> for processing:
+      </p>
+      <ul>
+        <li>the voice command itself, so it can be interpreted as an action; and</li>
+        <li>page text, when you explicitly ask for a summary or a spoken answer about the current page.</li>
+      </ul>
+      <p>
+        That traffic goes directly from your machine to DeepSeek. It does not pass through us. DeepSeek's
+        handling of that data is governed by DeepSeek's own terms and privacy policy. You can disable all
+        AI features at any time, in which case no data leaves your computer and only the built-in offline
+        command engine is used.
+      </p>
+
+      <h3>d) Your API key</h3>
+      <p>
+        Your DeepSeek API key is stored in plain text in a configuration file inside the folder where the
+        helper program runs, on your own computer. It is transmitted only to DeepSeek, as a request
+        header. We never receive it, store it, or have any way to read it.
+      </p>
+
+      <h3>e) Pairing</h3>
+      <p>
+        Pairing between your phone and your computer uses a short code displayed inside your own browser.
+        After pairing, your phone stores a random access token in its own browser storage. All of this
+        happens on your own devices.
+      </p>
+
+      <h2>4. What we do NOT do</h2>
+      <p>We do not:</p>
+      <ul>
+        <li>collect, transmit, or store your browsing history, page contents, keystrokes, or voice recordings;</li>
+        <li>operate any backend service, database, or log store that receives data from the Software;</li>
+        <li>use cookies, tracking pixels, fingerprinting, or any third-party analytics;</li>
+        <li>sell, rent, or share any information with advertisers or data brokers;</li>
+        <li>create user profiles of any kind.</li>
+      </ul>
+
+      <h2>5. Permissions the extension requests, and why</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Why it is needed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Read and change data on websites you visit</td>
+            <td>
+              Required so that commands such as "read this page", "click Sign in", "find on page" and
+              "scroll down" can act on the page you are currently viewing. Page content is processed
+              locally, and is only sent anywhere if you explicitly ask for an AI summary with your own key.
+            </td>
+          </tr>
+          <tr>
+            <td>Tabs</td>
+            <td>Required to open, close, switch, reload and navigate tabs on your command.</td>
+          </tr>
+          <tr>
+            <td>Storage</td>
+            <td>Required to remember your settings and pairing code locally in your browser.</td>
+          </tr>
+          <tr>
+            <td>Alarms</td>
+            <td>Required to keep the connection to your local helper program alive.</td>
+          </tr>
+          <tr>
+            <td>Network access to your local helper</td>
+            <td>
+              Required to receive commands from your phone on the same local network. By default this is
+              <code>127.0.0.1</code>; if you point the extension at another machine, you are asked to
+              approve that address explicitly.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        The Software does not use remote code. All executable code is contained in the extension package.
+      </p>
+
+      <h2>6. Local network security</h2>
+      <p>
+        The mobile controller page is served by the helper program on your computer. By default this is
+        plain HTTP over your local network, which means other devices on the same network could, in
+        principle, observe that traffic. Pairing requires a code displayed in your browser, and access
+        tokens are random, but if you are on an untrusted network you should run the helper in its HTTPS
+        mode. This is documented in the setup guide.
+      </p>
+
+      <h2>7. Data retention and your rights</h2>
+      <p>
+        Because we never receive your data, there is nothing for us to retain, export, correct, or delete.
+        Everything the Software stores lives on your own devices:
+      </p>
+      <ul>
+        <li>the helper's configuration file (including your AI key, if provided) in the helper's folder;</li>
+        <li>your settings and pairing token in your browser's local storage.</li>
+      </ul>
+      <p>
+        You can delete all of it at any time by removing those files and clearing the site's data in your
+        browser. If you are in the EU/UK and believe we hold data about you, contact us at
+        <span class="placeholder">[YOUR CONTACT EMAIL]</span> and we will respond within 30 days.
+      </p>
+
+      <h2>8. Children</h2>
+      <p>
+        The Software is not directed at children under 16, and we do not knowingly process data from
+        children.
+      </p>
+
+      <h2>9. Third-party services</h2>
+      <p>The Software can interact with the following third parties, each under their own terms:</p>
+      <ul>
+        <li>
+          <strong>DeepSeek</strong> (<code>api.deepseek.com</code>) — only when you enable AI features
+          with your own key.
+        </li>
+        <li>
+          <strong>Your browser's speech recognition provider</strong> (Google, Apple, or your device
+          vendor) — only when you use voice input.
+        </li>
+        <li>
+          <strong>Gumroad or the Chrome Web Store</strong> — the store through which you purchased the
+          Software. Your purchase is governed by that store's privacy policy; we receive only the email
+          address and order details that the store passes to sellers so we can provide support and
+          refunds.
+        </li>
+      </ul>
+
+      <h2>10. Changes to this policy</h2>
+      <p>
+        If this policy changes, we will update the "Last updated" date above and, for material changes,
+        note them on the product page. Continued use of the Software after an update constitutes
+        acceptance of the revised policy.
+      </p>
+
+      <h2>11. Contact</h2>
+      <p>
+        Questions about privacy:
+        <a href="mailto:[YOUR CONTACT EMAIL]"><span class="placeholder">[YOUR CONTACT EMAIL]</span></a>
+      </p>
+
+      <div class="notice">
+        <strong>Trademark notice.</strong> MicPilot is not affiliated with, endorsed by, or sponsored by
+        DeepSeek. Users must provide their own DeepSeek API key. This software only parses voice commands
+        and controls the user's own local browser on the same local network.
+      </div>
+
+      <footer class="site">
+        <a href="index.html">Home</a>
+        <a href="mailto:[YOUR CONTACT EMAIL]">Contact</a>
+        <p class="small">© <span id="year">2026</span> <span class="placeholder">[YOUR NAME OR COMPANY]</span>. All rights reserved.</p>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
