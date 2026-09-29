@@ -27,17 +27,22 @@ git add -A && git commit -m "Update site" && git push
 
 推上去后一两分钟线上就会更新（Pages 需要重新构建一次）。
 
-## 发布前检查清单
+## 待办
 
-1. 打开 `privacy.html`，把所有黄色高亮的 `[方括号]` 换成真实内容：
-   `[YOUR NAME OR COMPANY]`、`[YOUR CONTACT EMAIL]`、两个日期。
-2. 打开 `index.html`，替换 `[GUMROAD PRODUCT LINK]`、`[YOUR CONTACT EMAIL]`、`[YOUR NAME OR COMPANY]`。
-3. 确认没有残留的 `[` 字符：在仓库里搜一下 `[YOUR` 和 `[GUMROAD`。
-4. 手机上也打开一次，确认排版正常。
-5. 把 `privacy.html` 的完整网址填到：
+只剩一件事：把黄色高亮的 `[YOUR FULL LEGAL NAME]`（在 `privacy.html` 里出现两次）换成你的真实姓名。
+
+GDPR 要求隐私政策能指明"谁在负责"，只写品牌名不够，所以这一处必须用真名；
+产品名、版权行、商品页继续用 MicPilot 就行。
+
+换完之后：
+
+1. 确认没有残留的 `[` 字符（在仓库里搜一下 `[YOUR`）。
+2. 在手机上也打开一次，确认排版正常。
+3. 把 `privacy.html` 的完整网址填到：
    - Chrome Web Store 开发者后台的「Privacy policy URL」
    - Gumroad 商品的「Privacy policy」字段
-6. 删掉 `privacy.html` 顶部那段 `<!-- 发布前替换 -->` 注释。
+4. 上架 Gumroad 后，把 `index.html` 里那个 mailto 按钮换成商品链接、文案改回
+   "Get MicPilot"（文件里有注释标着位置）。
 
 ## 为什么单独开仓库
 
