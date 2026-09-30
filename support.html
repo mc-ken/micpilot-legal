@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Support — MicPilot</title>
+    <meta
+      name="description"
+      content="Getting help with MicPilot: setup, pairing, the phone microphone, refunds, and how to reach us."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="inner">
+        <span class="brand">MicPilot</span>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="mailto:szmcken168@gmail.com">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <h1>Support</h1>
+      <p class="lede">
+        Email <a href="mailto:szmcken168@gmail.com">szmcken168@gmail.com</a> and you will get a reply from
+        the developer — there is no support team, just one person who wrote the thing. Please include
+        what you did, what you expected, and what happened instead.
+      </p>
+
+      <h2>The phone page will not open</h2>
+      <ul>
+        <li>
+          Check the link carefully: it should end with <code>#</code> followed by your six-character
+          pairing code (for example <code>https://relay.micpilot.tech/#QPBM9J</code>). Copy it fresh
+          from the extension popup rather than retyping it.
+        </li>
+        <li>Try a different network once — some mobile networks block things their office Wi-Fi does not.</li>
+        <li>
+          If the page opens but says "Relay not connected", pull the page down to refresh it; the
+          connection is restored automatically a moment later.
+        </li>
+      </ul>
+
+      <h2>The microphone button does nothing</h2>
+      <ul>
+        <li>
+          <strong>Open the page in Safari</strong> (or your normal browser), not inside WeChat, QQ,
+          DingTalk, Slack, or another app's built-in browser. Those apps block the microphone for every
+          web page — it is their restriction, not something a page can work around. Use their
+          <code>⋯</code> menu and choose <em>Open in browser</em>.
+        </li>
+        <li>Allow microphone access when the browser asks. You can re-grant it in your browser's site settings.</li>
+        <li>
+          On iOS, Safari ends the listening session every so often; the page restarts it by itself. If
+          it ever stops for good, tap the microphone button once to start again.
+        </li>
+      </ul>
+
+      <h2>Pairing will not complete</h2>
+      <ul>
+        <li>The pairing request expires after three minutes — tap Pair again on your phone, then click Allow on your computer.</li>
+        <li>Make sure Chrome is running on the computer where you installed the extension, and that the extension badge is not red.</li>
+        <li>
+          If you previously saved a relay address in the extension's Settings page, clear it — otherwise
+          the extension keeps looking for a relay on your own computer instead of the cloud one.
+        </li>
+      </ul>
+
+      <h2>The extension says "Disconnected"</h2>
+      <ul>
+        <li>It reconnects on its own within a few seconds. If it does not, click Reconnect in the popup.</li>
+        <li>Check that your computer has internet access, and that a firewall or VPN is not blocking <code>relay.micpilot.tech</code>.</li>
+      </ul>
+
+      <h2>AI features and the DeepSeek API key</h2>
+      <ul>
+        <li>
+          Around 60 everyday commands work with no key at all. The key only adds the smarter
+          understanding of casual phrasing, page summaries, and spoken answers.
+        </li>
+        <li>Create a key at <code>platform.deepseek.com</code> — note that it is a separate account from the DeepSeek chat app.</li>
+        <li>The key is stored in your own browser and is never sent to us. If a key check fails, the popup and the phone page both tell you why (invalid, no balance, network).</li>
+      </ul>
+
+      <h2>Refunds</h2>
+      <p>
+        Seven days, no questions asked. If it does not work on your setup, email
+        <a href="mailto:szmcken168@gmail.com">szmcken168@gmail.com</a> and you will get your money back.
+        This does not affect any statutory rights you have, including the EU/UK right of withdrawal.
+      </p>
+
+      <h2>Privacy</h2>
+      <p>
+        What the software does with your data — and what it cannot see — is set out in the
+        <a href="privacy.html">privacy policy</a>.
+      </p>
+    </main>
+  </body>
+</html>
