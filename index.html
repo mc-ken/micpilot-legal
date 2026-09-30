@@ -55,9 +55,10 @@
         <div class="card">
           <h3>Encrypted end to end</h3>
           <p class="small muted">
-            Your commands are encrypted between your phone and your browser. By default your phone talks
-            straight to a small helper program on your own computer, so nothing leaves your network at
-            all. Even in the optional relay mode, the relay only ever forwards ciphertext.
+            Your commands are encrypted between your phone and your browser. The relay that connects them
+            only ever forwards ciphertext — it cannot read what you said, and it cannot see the pages you
+            asked for. Rather keep everything inside your own network? You can run the relay yourself
+            instead.
           </p>
         </div>
         <div class="card">
@@ -78,25 +79,23 @@
 
       <h2>How it works</h2>
       <ol>
-        <li>Run the included helper on your computer — one command, Node.js, no dependencies.</li>
-        <li>Load the Chrome extension using the step-by-step guide.</li>
-        <li>Open the controller page on your phone, enter the pairing code shown in your browser, click Allow on your computer, and start talking.</li>
+        <li>Install the Chrome extension — that is the only thing you install.</li>
+        <li>Open the link the extension gives you on your phone. It pairs by itself — nothing to type.</li>
+        <li>Click Allow on your computer once, then start talking. Your phone does not need to be on the same Wi-Fi.</li>
       </ol>
 
       <h2>Requirements</h2>
       <ul>
         <li>Chrome 116 or newer on Windows, macOS, or Linux</li>
-        <li>Node.js 18 or newer on that same computer</li>
-        <li>An Android or iOS phone on the same Wi-Fi network</li>
+        <li>An Android or iOS phone — any network, 4G or Wi-Fi</li>
         <li>Optional: your own DeepSeek API key for the AI features</li>
       </ul>
 
       <h2>What it is not</h2>
       <div class="notice">
-        MicPilot controls <strong>your own browser</strong>, on <strong>your own computer</strong>, on
-        <strong>your own local network</strong>. It cannot reach another person's device: the helper only
-        accepts connections from the machine it runs on, and pairing requires a code displayed inside your
-        own browser.
+        MicPilot controls <strong>your own browser</strong>, on <strong>your own computer</strong>. It
+        cannot reach another person's device: pairing needs a code that is only shown inside your own
+        browser, and you have to click <strong>Allow</strong> on that computer to let a phone in.
       </div>
 
       <h2>Trademark notice</h2>
